@@ -6,3 +6,5 @@ As I follow the course,  am updating this repository as a future reference for m
 I will try to add my own scenarios if possible instead of just blindly following the tutor's code. I have manually typed in all the code myself and tested on my computer. The package name change itself, though not singularly the proof for that.
 
 I will update the README when and wherever updation has been made. 
+
+The wiki / notes are available at : https://github.com/christyjohn/Microservices_SpringBoot_Udemy/wiki
