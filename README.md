@@ -1,4 +1,4 @@
-# Microservices_SpringBoot_Udemy
+# Microservices using Spring Boot 
 Code from the Udemy course 'Master Microservices with SpringBoot,Docker,Kubernetes (https://www.udemy.com/course/master-microservices-with-spring-docker-kubernetes)' by Madan Reddy (eazybytes)
 
 As I follow the course,  am updating this repository as a future reference for me. Though I am aware of microservices and have done a few courses before, this is one of the comprehensive courses I have foud covering more topics. My idea is to get a good grasp of the concepts and peruse this course as a singe go to course for the subject (I may subject it with other courses too if needed for the uncovered topics as and when I find them.)
