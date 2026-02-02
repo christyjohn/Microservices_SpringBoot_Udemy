@@ -8,3 +8,7 @@ I will try to add my own scenarios if possible instead of just blindly following
 I will update the README when and wherever updation has been made. 
 
 The wiki / notes are available at : https://github.com/christyjohn/Microservices_SpringBoot_Udemy/wiki
+
+## Updates
+
+**Major** - Instead of the Eazy Bank application, I am crating an Eazy Commerce Application. Instead of the accounts, loans and cards microservice, I am creating products(inventory), orders, and customers.
