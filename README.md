@@ -11,4 +11,4 @@ The wiki / notes are available at : https://github.com/christyjohn/Microservices
 
 ## Updates
 
-**Major** - Instead of the Eazy Bank application, I am crating an Eazy Commerce Application. Instead of the accounts, loans and cards microservice, I am creating products(inventory), orders, and customers.
+**Major** - Instead of the Eazy Bank application, I am creating an Eazy Commerce Application. Instead of the accounts, loans and cards microservice, I am creating products(inventory), orders, and customers.
