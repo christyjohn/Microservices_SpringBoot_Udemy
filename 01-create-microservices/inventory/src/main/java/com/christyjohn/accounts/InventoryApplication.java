@@ -1,4 +1,4 @@
-package com.christyjohn.inventory;
+package com.christyjohn.accounts;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

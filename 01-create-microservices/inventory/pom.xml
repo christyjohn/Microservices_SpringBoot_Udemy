@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.christyjohn</groupId>
-	<artifactId>inventory</artifactId>
+	<artifactId>accounts</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>inventory</name>
-	<description>Service for the product inventory service</description>
+	<description>Service for the acoounts service</description>
 	<url/>
 	<licenses>
 		<license/>
