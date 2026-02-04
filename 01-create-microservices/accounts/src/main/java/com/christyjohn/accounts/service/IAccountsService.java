@@ -2,7 +2,7 @@ package com.christyjohn.accounts.service;
 
 import com.christyjohn.accounts.dto.CustomerDto;
 
-public interface AccountsService {
+public interface IAccountsService {
 
     /**
      *

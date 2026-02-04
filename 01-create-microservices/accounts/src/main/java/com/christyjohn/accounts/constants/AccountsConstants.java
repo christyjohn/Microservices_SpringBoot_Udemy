@@ -1,6 +1,7 @@
 package com.christyjohn.accounts.constants;
 
-public final class AccountsConstants {
+public class AccountsConstants {
+
     private AccountsConstants() {
         // restrict instantiation
     }

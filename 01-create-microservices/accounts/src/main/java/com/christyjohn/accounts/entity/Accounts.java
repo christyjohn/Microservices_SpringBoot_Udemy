@@ -6,18 +6,14 @@ import jakarta.persistence.Id;
 import lombok.*;
 
 @Entity
-@Getter
-@Setter
-@ToString
-@AllArgsConstructor
-@NoArgsConstructor
-public class Accounts extends  BaseEntity {
+@Getter @Setter @ToString @AllArgsConstructor @NoArgsConstructor
+public class Accounts extends BaseEntity {
 
     @Column(name="customer_id")
     private Long customerId;
 
-    @Column(name="account_number")
     @Id
+    @Column(name="account_number")
     private Long accountNumber;
 
     @Column(name="account_type")
