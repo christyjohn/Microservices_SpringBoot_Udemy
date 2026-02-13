@@ -23,7 +23,7 @@ build:
 accounts:
   message: "Welcome to EazyBank accounts related local APIs "
   contactDetails:
-    name: "Christy JOhn - Developer"
+    name: "Christy John - Developer"
     email: "christy.john@eazybank.com"
   onCallSupport:
     - (555) 555-1234
