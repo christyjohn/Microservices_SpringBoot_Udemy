@@ -1,6 +1,6 @@
 services:
   accounts:
-    image: "chrystejon/accounts-ez:latest"
+    image: "chrystejon/accounts-ez:s6"
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -11,7 +11,7 @@ services:
     networks:
       - eazybank
   loans:
-    image: "chrystejon/loans-ez:latest"
+    image: "chrystejon/loans-ez:s6"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -22,7 +22,7 @@ services:
     networks:
       - eazybank
   cards:
-    image: "chrystejon/cards-ez:latest"
+    image: "chrystejon/cards-ez:s6"
     container_name: cards-ms
     ports:
       - "9000:9000"
