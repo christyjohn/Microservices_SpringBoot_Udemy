@@ -2,6 +2,7 @@ package com.christyjohn.loans.controller;
 
 import com.christyjohn.loans.constants.LoansConstants;
 import com.christyjohn.loans.dto.ErrorResponseDto;
+import com.christyjohn.loans.dto.LoansContactInfoDto;
 import com.christyjohn.loans.dto.LoansDto;
 import com.christyjohn.loans.dto.ResponseDto;
 import com.christyjohn.loans.service.ILoansService;
@@ -42,6 +43,9 @@ public class LoansController {
 
     @Autowired
     private Environment environment;
+
+    @Autowired
+    private LoansContactInfoDto loansContactInfoDto;
 
     @Operation(
             summary = "Create Loan REST API",
@@ -219,5 +223,30 @@ public class LoansController {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(environment.getProperty("JAVA_HOME"));
+    }
+
+    @Operation(
+            summary = "Get Contact Info",
+            description = "Contact Info details that can be reached out in case of any issues"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/contact-info")
+    public ResponseEntity<LoansContactInfoDto> getContactInfo() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(loansContactInfoDto);
     }
 }
