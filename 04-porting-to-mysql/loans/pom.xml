@@ -128,7 +128,7 @@
 				<version>3.5.1</version>
 				<configuration>
 					<to>
-						<image>chrystejon/${project.artifactId}-ez:s7</image>
+						<image>chrystejon/${project.artifactId}-ez:s8</image>
 					</to>
 				</configuration>
 			</plugin>
