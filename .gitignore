@@ -102,6 +102,7 @@ loki/
 /index/
 /index_stats/
 
+#minio
 .data/
 
 	
