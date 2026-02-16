@@ -86,3 +86,22 @@ gradle-app.setting
 # Operating System Files
 .DS_Store # Mac
 Thumbs.db # Windows
+
+# Grafana
+data/grafana.db*
+data/plugins/
+data/png/
+*.log
+/grafana-kv-data
+
+# Loki
+loki/
+*.wal
+/wal/
+/chunks/
+/index/
+/index_stats/
+
+.data/
+
+	
