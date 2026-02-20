@@ -1,9 +1,8 @@
 package com.christyjohn.accounts.service.impl;
 
-import com.christyjohn.accounts.dto.AccountsDto;
-import com.christyjohn.accounts.repository.AccountsRepository;
-import com.christyjohn.accounts.repository.CustomerRepository;
 import com.christyjohn.accounts.constants.AccountsConstants;
+import com.christyjohn.accounts.dto.AccountsDto;
+import com.christyjohn.accounts.dto.AccountsMsgDto;
 import com.christyjohn.accounts.dto.CustomerDto;
 import com.christyjohn.accounts.entity.Accounts;
 import com.christyjohn.accounts.entity.Customer;
@@ -11,8 +10,13 @@ import com.christyjohn.accounts.exception.CustomerAlreadyExistsException;
 import com.christyjohn.accounts.exception.ResourceNotFoundException;
 import com.christyjohn.accounts.mapper.AccountsMapper;
 import com.christyjohn.accounts.mapper.CustomerMapper;
+import com.christyjohn.accounts.repository.AccountsRepository;
+import com.christyjohn.accounts.repository.CustomerRepository;
 import com.christyjohn.accounts.service.IAccountsService;
 import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -22,8 +26,11 @@ import java.util.Random;
 @AllArgsConstructor
 public class AccountsServiceImpl implements IAccountsService {
 
+    private static final Logger log = LoggerFactory.getLogger(AccountsServiceImpl.class);
+
     private AccountsRepository accountsRepository;
     private CustomerRepository customerRepository;
+    private final StreamBridge streamBridge;
 
     /**
      * @param customerDto - CustomerDto Object
@@ -37,7 +44,17 @@ public class AccountsServiceImpl implements IAccountsService {
                     +customerDto.getMobileNumber());
         }
         Customer savedCustomer = customerRepository.save(customer);
+        Accounts savedAccount = accountsRepository.save(createNewAccount(savedCustomer));
+        sendCommunication(savedAccount, savedCustomer);
         accountsRepository.save(createNewAccount(savedCustomer));
+    }
+
+    private void sendCommunication(Accounts account, Customer customer) {
+        var accountsMsgDto = new AccountsMsgDto(account.getAccountNumber(), customer.getName(),
+                customer.getEmail(), customer.getMobileNumber());
+        log.info("Sending Communication request for the details: {}", accountsMsgDto);
+        var result = streamBridge.send("sendCommunication-out-0", accountsMsgDto);
+        log.info("Is the Communication request successfully triggered ? : {}", result);
     }
 
     /**
