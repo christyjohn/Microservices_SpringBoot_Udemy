@@ -348,7 +348,7 @@ services:
       service: microservice-eureka-config
 
   message:
-    image: "chrystejon/message:s14"
+    image: "chrystejon/message-ez:s14"
     container_name: message-ms
     depends_on:
       rabbit:
